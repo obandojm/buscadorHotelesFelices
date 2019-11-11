@@ -1,5 +1,6 @@
+import { Router, ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Persona } from '../core/model/persona';
 
 @Component({
   selector: 'app-uno',
@@ -7,12 +8,14 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./uno.page.scss'],
 })
 export class UnoPage implements OnInit {
+  data: Persona;
+  dataDos: Persona;
+  constructor(private route: ActivatedRoute, public router: Router) {
+    // Esta es la forma mas sencilla pero no recomendada
+    this.data = this.router.getCurrentNavigation().extras.state.persona;
+    this.dataDos = this.router.getCurrentNavigation().extras.state.personaDos;
+  }
 
-  private mio:string;
-  constructor(private activatedRouter:ActivatedRoute) {
-    this.mio=this.activatedRouter.snapshot.paramMap.get('numero');
-   }
-  
   ngOnInit() {
   }
 

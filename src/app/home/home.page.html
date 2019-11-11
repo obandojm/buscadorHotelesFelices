@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Mucho para el primer dia
+      Ionic Blank
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -11,9 +11,6 @@
     The world is your oyster.
     <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
   </div>
-
-<!-- <ion-button expand = "block" [routerLink]="['/uno/',18]">Voy a Uno</ion-button> -->
-<ion-input [(ngModel)]="numero"  placeholder = "Introduce numero"></ion-input>
-<ion-button expand = "block" [routerLink]="['/a-kilometros/',numero]">pasar a Kilometros</ion-button>
-<ion-button expand = "block" [routerLink]="['/a-millas/',numero]">pasar a millas</ion-button>
+  <ion-button (click)="obtenerPersona()"> A uno </ion-button>
+  <input [(ngModel)]="personaje.nombre">
 </ion-content>
